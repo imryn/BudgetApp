@@ -1,0 +1,11 @@
+.expanse_form {
+    border: 3px solid red;
+}
+
+.expanse_form input, .expanse_form button {
+    border: 1px solid red;
+}
+
+.expanse_form button {
+    color: red;
+}
