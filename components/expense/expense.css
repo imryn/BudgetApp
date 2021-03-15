@@ -1,0 +1,19 @@
+.expenses-table {
+    margin: 0 auto;
+    width: 20%;
+    font-size: 18px;
+}
+
+.expenses-table thead {
+    text-align: center;
+}
+
+.expense_td {
+    color: red;
+    text-align: center;
+}
+
+.expenses {
+    width: 25%;
+    text-align: center;
+}
