@@ -7,11 +7,11 @@ const EXPENSE_VALUE_LOGO = "../../icons/attach_money-24px.svg";
 
 export class Expense {
 
-    constructor(selector, expenses) {
+    constructor(componentName, expenses) {
         this.element = document.querySelector('.container');
         this.expenses = expenses;
-        this.selector = selector;
-        this.expenseComponent = createElement("div",{class: selector});
+        this.componentName = componentName;
+        this.expenseComponent = createElement("div",{class: componentName});
         this.table = createElement("table", {class: "expenses-table"});
         this.createExpenseComponent();
         this.createHeader();
@@ -21,9 +21,9 @@ export class Expense {
 
    createExpenseComponent() {
         const title = createElement("span", {class:"expense_title"});
-        let sumOfExpenses = 0;
+      //  let sumOfExpenses = 0;
 
-        title.innerHTML=this.selector;
+        title.innerHTML=this.componentName;
         this.expenseComponent.append(title);
 
         const expenseIcon = createElement("img", {class:"expense_icon material-icons", src: EXPENSEICON});
@@ -34,20 +34,20 @@ export class Expense {
         const expenseValue = createElement("div", {class:"expense_value"});
         const BudgetAndExpensesComponent = document.querySelector(".Budget_And_Expenses");
 
-         this.expenses.forEach((item) => {
-             sumOfExpenses = sumOfExpenses + parseInt(item.expense_Value);
-         });
+        console.log(this.expenses);
+
+        const sumOfExpenses = this.expenses.reduce((acc,item)=> acc + parseInt(item.expense_Value), 0);
         
-         expenseValue.innerHTML=sumOfExpenses;
+        expenseValue.innerHTML=sumOfExpenses;
 
-         expenseValue.append(expenseValueLogo);
+        expenseValue.append(expenseValueLogo);
 
-         this.expenseComponent.append(expenseValue);
-         BudgetAndExpensesComponent.append(this.expenseComponent);
+        this.expenseComponent.append(expenseValue);
+        BudgetAndExpensesComponent.append(this.expenseComponent);
 
-         this.element.append(BudgetAndExpensesComponent);
+        this.element.append(BudgetAndExpensesComponent);
 
-         this.sendExpenseToBalance(sumOfExpenses);
+        this.sendExpenseToBalance(sumOfExpenses);
    }
 
     createHeader() {

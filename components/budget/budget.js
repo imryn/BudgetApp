@@ -4,18 +4,18 @@ const BUDGET_VALUE_LOGO = "../../icons/attach_money-24px.svg";
 
 export class Budget {
 
-    constructor(selector, budget) {
+    constructor(componentName, budget) {
         this.element = document.querySelector('.budget-app');
         this.budget = budget;
-        this.selector = selector;
-        this.budgetComponent = createElement("div",{class: selector});
+        this.componentName = componentName;
+        this.budgetComponent = createElement("div",{class: componentName});
         this.createBudgetComponent();
     }
 
 
     createBudgetComponent() {
         const title = createElement("span", {class:"budget_title"});
-        title.innerHTML=this.selector;
+        title.innerText=this.componentName;
         this.budgetComponent.append(title);
 
         const budgetIcon = createElement("img", {class:"budget_icon material-icons", src: `../../icons/${this.budget.svg_icon}`});
@@ -24,7 +24,7 @@ export class Budget {
         const budgetValueLogo = createElement("img", {class: "budget_value_logo", src: BUDGET_VALUE_LOGO});
 
         const budgetValue = createElement("div", {class:"budget_value"});
-        budgetValue.innerHTML=this.budget.budget_value;
+        budgetValue.innerText=this.budget.budget_value;
 
         budgetValue.append(budgetValueLogo);
 

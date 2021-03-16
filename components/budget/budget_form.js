@@ -3,11 +3,11 @@ import { Budget } from "./budget.js";
 
 export class BudgetForm {
 
-    constructor(selector, budget) {
+    constructor(componentName, budget) {
 
         this.element = document.querySelector('.budget-form-container');
         this.budget = budget;
-        this.budgetForm  = createElement("form", {class: selector, onsubmit:"return false;"});
+        this.budgetForm  = createElement("form", {class: componentName, onsubmit:"return false;"});
         this.container = createElement("div", {class: "container"});
         this.BudgetAndExpensesComponent = createElement("div", {class: "Budget_And_Expenses"});
 
@@ -36,7 +36,7 @@ export class BudgetForm {
         const divFormBudgetInfo = createElement("div", {class: "div_form_budget_info" });
         const lables = createElement("label", {class: "budget_form_label"});
         lables.innerHTML = item.value;
-        const input = createElement("input", {type: item.type ,class: `${item.type}_${this.budgetForm.className}_input`, name: `${item.type}`});
+        const input = createElement("input", {type: item.type ,class: `${item.type}_${this.budgetForm.className}`, name: `${item.type}`});
         divFormBudgetInfo.append(lables);
         divFormBudgetInfo.append(input)
 
@@ -46,8 +46,8 @@ export class BudgetForm {
      createButtons() {
         this.budget.find(item => {
             if(item.type === 'button') {
-                const button = createElement("button", {type: item.type, class: `${this.budgetForm.className}_button`});
-                button.innerHTML = item.value;
+                const button = createElement("button", {type: item.type, class: `${this.budgetForm.className}_submit`});
+                button.innerText = item.value;
                 this.budgetForm.append(button);
             }
         })
@@ -55,9 +55,9 @@ export class BudgetForm {
      }
 
      sendBudgetValueToBudgetComponent() {
-        const submitButton = document.querySelector('.budget_form_button');
+        const submitButton = document.querySelector(`.${this.budgetForm.className}_submit`);
         submitButton.addEventListener("click",() => {
-            let budgetValue = document.querySelector(".number_budget_form_input").value;
+            let budgetValue = document.querySelector(".number_budget_form").value;
             const element = document.querySelector(".Budget_And_Expenses");
             element.removeChild(document.querySelector(".budget"));
 
