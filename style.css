@@ -1,29 +1,61 @@
+@import "./components/valueCard/valueCard.css";
+@import "./components/table/table.css";
+
+.budget-app {
+    background-color: azure;
+    display: flex;
+}
+
 .container {
     width: 100%;
     display: flex;
 }
 
-.budget-app {
-    background-color: azure;
+.expense, .budget, .balance {
+    width: 25%;
+    text-align: center;
 }
 
-.Budget_And_Expenses {
-    width: 70%;
-    display: flex;
+.expense_form {
+    border: 3px solid red;
 }
 
-.budget_title, .expense_title, .balance_title {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
+.expense_form input, .expense_form .submit_button {
+    border: 1px solid red;
 }
 
-.budget_icon, .expense_icon, .balance_icon {
-    display: block;
-    margin: auto;
-    width: 50px;
+.expense_form .submit_button {
+    color: red;
+    margin: 0 0 10px 10px;
+    background-color: white;
+    padding: 5px;
 }
 
-.budget_value, .expense_value, .balance_value {
-    font-size: 30px;
+.budget_form {
+    border: 3px solid green;
+    margin-bottom: 10px;
+}
+
+.budget_form input, .budget_form .submit_button {
+    border: 1px solid green;
+}
+
+.budget_form .submit_button {
+    color: green;
+    margin: 0 0 10px 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 480px) {
+    
+    .budget-app{
+        display: block;
+    }
+
+    .expense, .budget, .balance {
+        width: 33%;
+        text-align: center;
+    }
 }

@@ -1,7 +1,6 @@
-
 export function createElement(elementType, attributes) {
 
-    const element = document.createElement(elementType);
+    const element = typeof elementType === 'string' ? document.createElement(elementType) : elementType;
 
     for(let key in attributes) {
         element.setAttribute(key, attributes[key]);
@@ -9,3 +8,4 @@ export function createElement(elementType, attributes) {
 
     return element;
 }
+
