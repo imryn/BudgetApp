@@ -1,0 +1,51 @@
+.budget_and_expenses {
+    width: 70%;
+    display: flex;
+}
+
+.field_info {
+    margin: 10px;
+}
+
+.budget-form-container {
+    width: 30%;
+}
+
+input {
+    display: block;
+    margin-top: 5px;
+}
+
+.card_title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card_icon {
+    margin: auto;
+    width: 50px;
+}
+
+.card_value {
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .budget-form-container {
+        width: 100%;
+    }
+
+    .budget_and_expenses {
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .card_title {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

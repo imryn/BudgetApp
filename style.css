@@ -1,0 +1,61 @@
+@import "./components/valueCard/valueCard.css";
+@import "./components/table/table.css";
+
+.budget-app {
+    background-color: azure;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.expense, .budget, .balance {
+    width: 25%;
+    text-align: center;
+}
+
+.expense_form {
+    border: 3px solid red;
+}
+
+.expense_form input, .expense_form .submit_button {
+    border: 1px solid red;
+}
+
+.expense_form .submit_button {
+    color: red;
+    margin: 0 0 10px 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.budget_form {
+    border: 3px solid green;
+    margin-bottom: 10px;
+}
+
+.budget_form input, .budget_form .submit_button {
+    border: 1px solid green;
+}
+
+.budget_form .submit_button {
+    color: green;
+    margin: 0 0 10px 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 480px) {
+    
+    .budget-app{
+        display: block;
+    }
+
+    .expense, .budget, .balance {
+        width: 33%;
+        text-align: center;
+    }
+}
